@@ -1,0 +1,15 @@
+<div id="products" class="product-edit-page">
+    <h1 class="title">Editar produto</h1>
+    <%= form_with model: @product do |form| %>
+        <div class="mb-3">
+            <%= form.label :name, class: "form-label", for: "inputName" %>
+            <%= form.text_field :name, class: "form-control shadow-none", id: "inputName" %>
+        </div>
+        <div class="actions">
+            <button type="submit" class="btn edit-product-btn">Salvar produto</button>
+            <div>
+                <%= link_to "Ir para lista", products_path %>
+            </div>
+        </div>
+    <% end %>
+</div>

@@ -1,0 +1,22 @@
+<%= tag.div(flash[:alert], style: "color:red", class: "notice") if flash[:alert] %>
+<%= tag.div(flash[:notice], style: "color:green") if flash[:notice] %>
+<div class="sign-in">
+  <%= form_with url: session_path do |form| %>
+    <img src="/logo.png" >
+    <div class="mb-3">
+      <label for="inputEmail" class="form-label">E-mail</label>
+      <%= form.email_field :email_address, type: "email", required: true, id: "inputEmail", class: "form-control shadow-none", autofocus: true, autocomplete: "username", placeholder: "Digite o seu e-mail", value: params[:email_address] %>
+    </div>
+    <div class="mb-3">
+      <label for="inputPassword" class="form-label">Senha</label>
+      <%= form.password_field :password, type: "password", required: true, id: "inputPassword", class: "form-control shadow-none", autocomplete: "current-password", placeholder: "Digite a sua senha", maxlength: 72 %>
+      <div class="align-end">
+        <%= link_to "Esqueceu sua senha?", new_password_path %>
+      </div>
+    </div>
+    <button type="submit" class="btn">Entrar</button>
+    <div class="align-end">
+      <a href="/nova-conta">Criar conta</a>
+    </div>
+  <% end %>
+</div>

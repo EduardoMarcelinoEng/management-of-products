@@ -1,0 +1,6 @@
+{
+  "dependencies": {},
+  "scripts": {
+    "build": "bundle exec rails dartsass:build"
+  }
+}
