@@ -10,9 +10,6 @@
     <div class="mb-3">
       <label for="inputPassword" class="form-label">Senha</label>
       <%= form.password_field :password, type: "password", required: true, id: "inputPassword", class: "form-control shadow-none", autocomplete: "current-password", placeholder: "Digite a sua senha", maxlength: 72 %>
-      <div class="align-end">
-        <%= link_to "Esqueceu sua senha?", new_password_path %>
-      </div>
     </div>
     <button type="submit" class="btn">Entrar</button>
     <div class="align-end">

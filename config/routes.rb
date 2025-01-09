@@ -16,7 +16,9 @@ Rails.application.routes.draw do
   resources :products
 
   get "/login", to: "login#index"
-  get "/nova-conta", to: "sign_up#index"
+  get "/nova-conta", to: "user#new"
+  post "/users", to: "user#create"
+  resources :users
 
   root "products#index"
 end

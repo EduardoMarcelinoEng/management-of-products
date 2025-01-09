@@ -2,7 +2,8 @@ class ProductsController < ApplicationController
   before_action :current_user, :set_product, only: %i[ show edit update destroy ]
 
   def index
-    @products = Product.all
+    @user = User.find(current_user.id)
+    @products = @user.products.all
   end
 
   def show

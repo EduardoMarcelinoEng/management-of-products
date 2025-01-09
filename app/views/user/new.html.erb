@@ -1,0 +1,30 @@
+<% content_for :for_head do %>
+    <%= javascript_include_tag('controllers/user/new.js') %>
+<% end %>
+<%= tag.div(flash[:alert], style: "color:red", class: "notice") if flash[:alert] %>
+<%= tag.div(flash[:notice], style: "color:green") if flash[:notice] %>
+<div class="sign-up">
+    <%= form_with model: User.new do |form| %>
+        <div class="mb-3 form-group">
+            <%= form.label :email, class: "form-label", for: "inputEmail" %>
+            <%= form.text_field :email_address, class: "form-control shadow-none", id: "inputEmail", placeholder: "Digite o seu e-mail", type: "text" %>
+            <div id="inputEmailFeedback" class="invalid-feedback"></div>
+        </div>
+        <div class="mb-3 form-group">
+            <%= form.label :senha, class: "form-label", for: "inputPassword" %>
+            <%= form.text_field :password, class: "form-control shadow-none", id: "inputPassword", placeholder: "Digite a sua senha", :required => true, type: "password" %>
+            <div id="inputPasswordFeedback" class="invalid-feedback"></div>
+        </div>
+        <div class="mb-3 form-group">
+            <%= form.label :repita_a_senha, class: "form-label", for: "inputRepeatPassword" %>
+            <%= form.text_field :password_confirmation, class: "form-control shadow-none", id: "inputRepeatPassword", placeholder: "Digite a senha novamente", :required => true, type: "password" %>
+            <div id="inputRepeatPasswordFeedback" class="invalid-feedback"></div>
+        </div>
+        <div class="actions">
+            <button type="submit" class="btn create-product-btn">Criar</button>
+            <div class="align-end">
+                <a href="/">Login</a>
+            </div>
+        </div>
+    <% end %>
+</div>

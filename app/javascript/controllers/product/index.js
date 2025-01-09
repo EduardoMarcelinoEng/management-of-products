@@ -1,28 +1,4 @@
 document.addEventListener("DOMContentLoaded", function() {
-    // jQuery(document).bind('DOMNodeInserted', function(e) {
-    //     var element = e.target;
-    //     if (jQuery(element).hasClass('modal-backdrop')) {
-    //        alert('here we are');
-    //     if (jQuery(".modal-backdrop").length > -1) {
-    //             jQuery(".modal-backdrop").not(':first').remove();
-    //         }
-    //     }
-    // });
-    
-    // jQuery(document).on("DOMNodeRemoved",".modal-backdrop",function(){
-    //     jQuery(".modal-backdrop").remove();
-    // });
-
-    // var observer = new MutationObserver(function () {
-    //     var element = document.body;
-    //     if (jQuery(element).hasClass('modal-backdrop')) {
-    //         alert('here we are');
-    //         if (jQuery(".modal-backdrop").length > -1) {
-    //             jQuery(".modal-backdrop").not(':first').remove();
-    //         }
-    //     }
-    // });
-    // observer.observe(document.body, { childList: true });
 
     const tableEl = document.querySelector(".list-products");
 
@@ -45,11 +21,7 @@ document.addEventListener("DOMContentLoaded", function() {
     [...document.querySelectorAll(".modal .modal-footer .btn.delete")].forEach(el=>el.addEventListener("click", async ()=>{
         const trEl = el.closest('tr');
         const modalEl = el.closest('.modal');
-        // modalEl.on("shown.bs.modal", function () {
-        //     if ($(".modal-backdrop").length > 1) {
-        //         $(".modal-backdrop").not(':first').remove();
-        //     }
-        // });
+
         const productId = trEl.id.replace("product-", "");
         const csrf = document.querySelector("meta[name='csrf-token']").getAttribute("content");
         await fetch(`http://localhost:3000/products/${productId}`, {
