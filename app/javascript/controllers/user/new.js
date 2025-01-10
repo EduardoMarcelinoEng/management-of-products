@@ -49,7 +49,7 @@ document.addEventListener("DOMContentLoaded", function() {
             repeatPasswordEl
         );
 
-        fetch('http://localhost:3000/users', {
+        fetch('/users', {
             method: 'POST',
             body: JSON.stringify({
                 email_address: emailEl.value,

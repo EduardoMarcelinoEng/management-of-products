@@ -24,7 +24,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
         const productId = trEl.id.replace("product-", "");
         const csrf = document.querySelector("meta[name='csrf-token']").getAttribute("content");
-        await fetch(`http://localhost:3000/products/${productId}`, {
+        await fetch(`/products/${productId}`, {
             method: 'DELETE',
             headers: {
               'X-Requested-With': 'XMLHttpRequest',
