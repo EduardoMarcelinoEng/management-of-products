@@ -29,7 +29,6 @@
     <% if controller_name == "products" && (action_name == "index" || action_name == "edit" || action_name == "new") %>
       <%= render partial: "partials/header" %>
     <% end %>
-    <div>
     <%= yield %>
   </body>
 </html>
