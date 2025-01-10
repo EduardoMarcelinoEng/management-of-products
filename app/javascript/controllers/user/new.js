@@ -61,7 +61,6 @@ document.addEventListener("DOMContentLoaded", function() {
             }
         })
             .then(async function (response){
-                debugger
                 if(response.status >= 400){
                     window.location.reload();
                     return alert("Erro ao criar usuário.");
@@ -70,7 +69,6 @@ document.addEventListener("DOMContentLoaded", function() {
                 //window.location.href = "/";
             })
             .catch(err=>{
-                debugger
                 alert("Erro ao criar usuário.")
             });
     });
