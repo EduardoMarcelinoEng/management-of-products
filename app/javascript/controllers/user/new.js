@@ -66,7 +66,7 @@ document.addEventListener("DOMContentLoaded", function() {
                     return alert("Erro ao criar usuário.");
                 }
 
-                //window.location.href = "/";
+                window.location.href = "/";
             })
             .catch(err=>{
                 alert("Erro ao criar usuário.")
